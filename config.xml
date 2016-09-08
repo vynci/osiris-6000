@@ -8,13 +8,11 @@
       Your Name Here
     </author>
     <content src="index.html" />
-    <gap:plugin name="com.ionic.keyboard">
-      <param name="onload" value="true"  />
-    </gap:plugin>
+    <plugin name="com.ionic.keyboard" spec="1.0.3" source="pgb" />
     <gap:plugin name="org.apache.cordova.console" />
     <gap:plugin name="org.apache.cordova.device" />
     <plugin name="cordova-plugin-whitelist" spec="1" />
-    <gap:plugin name="cordova-plugin-geolocation" source="npm" spec="~2.2.0" />    
+    <gap:plugin name="cordova-plugin-geolocation" source="npm" spec="~2.2.0" />
     <access origin="*" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
