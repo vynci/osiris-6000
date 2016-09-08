@@ -1,0 +1,76 @@
+<ion-view view-title="Home">
+  <ion-content overflow-scroll="true">
+    <div class="text-center" style="">
+
+
+      <div class="row" ng-hide="isLogged" style="border-bottom-width: 1px; border-style: solid; border-color: lightgray;">
+        <div class="col">
+          <button class="button button-block button-positive button-small" ng-click="showRegisterForm()">SIGN UP</button>
+        </div>
+        <div class="col">
+          <button class="button button-block button-positive button-small" ng-click="login()">LOG IN</button>
+        </div>
+      </div>
+
+      <div class="row" ng-show="isLogged" style="border-bottom-width: 1px; border-style: solid; border-color: lightgray;">
+        <div class="col">
+          <p>
+            Hi <b>{{currentCustomer}}</b>! Welcome to Blush, tap on the quick links below to get started!
+          </p>
+        </div>
+
+      </div>
+
+
+      <br>
+
+
+      <h5>Find and Book</h5>
+
+      <br>
+      <div id="home-find" class="row responsive-sm" style="padding-left: 0px; padding-right: 0px; padding-top: 0px;">
+        <div class="col my-container" ng-click="redirect('app.artistlist')" style="margin-bottom: 2px; background: linear-gradient(to bottom, #ff6c8f , #eee);">
+          <a href="#/app/artistlist">
+            <h4 class="text-left" style="color:white; z-index: 2; position: relative; text-shadow: 0 0 3px rgba(98, 94, 94, 0.95);"><b>Find Artists Near You</b></h4>
+            <h5 class="text-left" style="color:white; z-index: 2; position: relative; text-shadow: 0 0 3px rgba(98, 94, 94, 0.95);">View it in Map View or List View</h5>
+          </a>
+          <img src="img/back1.jpg">
+
+          <!-- <a class="button button-block button-balanced" href="#/app/service">
+            Find Artists Near You
+          </a> -->
+        </div>
+        <div class="col my-container" ng-click="redirect('app.discover')" style="margin-bottom: 2px; background: linear-gradient(to bottom, #6cffdc , #eee);">
+          <div>
+            <h4 class="text-left" style="color:white; z-index: 2; position: relative; text-shadow: 0 0 3px rgba(98, 94, 94, 0.95);"><b>Discover Daily Trends</b></h4>
+            <h5 class="text-left" style="color:white; z-index: 2; position: relative; text-shadow: 0 0 3px rgba(98, 94, 94, 0.95);">Awesome daily updates from artists</h5>
+          </div>
+          <img src="img/back2.jpg">
+          <!-- <a class="button button-block button-assertive" href="#/app/discover">
+            Discover Daily Trends
+          </a> -->
+        </div>
+
+        <div class="col my-container" ng-click="redirect('app.artist')" style="background: linear-gradient(to bottom, #6cd9ff , #eee);">
+          <div>
+            <h4 class="text-left" style="color:white; z-index: 2; position: relative; text-shadow: 0 0 3px rgba(98, 94, 94, 0.95);"><b>Quick Booking</b></h4>
+            <h5 class="text-left" style="color:white; z-index: 2; position: relative; text-shadow: 0 0 3px rgba(98, 94, 94, 0.95);">Instantly book the nearest and available artist</h5>
+          </div>
+          <!-- <button class="button button-block button-positive">
+          Quick Booking
+        </button> -->
+        <img src="img/back3.jpg">
+      </div>
+
+      </div>
+      <div class="row" style="padding-left: 0px; padding-right: 0px;">
+
+      </div>
+
+
+
+    </div>
+
+
+  </ion-content>
+</ion-view>

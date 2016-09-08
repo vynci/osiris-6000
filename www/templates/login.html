@@ -1,0 +1,38 @@
+<ion-modal-view>
+  <ion-content class="login-container blush-background">
+
+    <label class="item blush-background text-right" style="padding-top: 0px; padding-bottom: 0px;">
+      <button class="button button-stable button-small button-clear" ng-click="closeModal()">Close <i class="ion-close"></i></button>
+    </label>
+
+      <div style="text-align: center; padding-top: 0px;">
+        <img src="img/stroke.png" alt="" style="width: 80%;">
+        <!-- <h1 style="font-family: 'SouthernAire'; color: #eee; font-size: 8em;">Blush</h1> -->
+      </div>
+
+      <form>
+        <div class="list">
+          <label class="item blush-background item-input" style="padding-right: 5%;">
+            <span class="input-label login-text">Email</span>
+            <input class="login-text login-input" type="text" ng-model="loginData.username" autofocus>
+          </label>
+          <label class="item blush-background item-input" style="padding-right: 5%;">
+            <span class="input-label login-text">Password</span>
+            <input class="login-text login-input" type="password" ng-model="loginData.password">
+          </label>
+          <br>
+          <br>
+          <label class="item blush-background" style="padding-bottom: 0px;">
+            <button class="button button-block button-light blush-button-teal button-outline" ng-click="doLogin()">Log in</button>
+          </label>
+          <label class="item blush-background text-center" style="padding-top: 0px; padding-bottom: 0px;">
+            <button class="button button-block button-light button-clear" ng-click="showRegisterForm()" style="color: #50C9C3;">Register Here</button>
+          </label>
+        </div>
+      </form>
+
+    </div>
+
+
+  </ion-content>
+</ion-modal-view>

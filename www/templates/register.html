@@ -1,0 +1,49 @@
+<ion-modal-view>
+  <ion-content class="login-container blush-background">
+    <div class="list text-right">
+      <div class="item blush-background">
+        <button class="button button-outline button-small button-stable" ng-click="closeModal()">
+          X
+        </button>
+      </div>
+    </div>
+
+    <div style="text-align: center;">
+      <!-- <img src="img/stroke.png" alt="" style="width: 80%;"> -->
+      <h1 style="color: rgba(68, 68, 68, 0.74); font-size: 1.5em;">Get Started with a Free Account.</h1>
+      <h1 style="color: rgba(68, 68, 68, 0.74); font-size: 1em;">Sign up in 15 seconds. No credit card required.</h1>
+    </div>
+
+    <br>
+    <br>
+    <form ng-submit="doRegister()">
+      <div class="list">
+        <label class="item blush-background item-input" style="padding-right: 5%;">
+          <span class="input-label login-text">First Name</span>
+          <input class="login-input" type="text" ng-model="registerData.firstName" autofocus>
+        </label>
+        <label class="item blush-background item-input" style="padding-right: 5%;">
+          <span class="input-label login-text">Last Name</span>
+          <input class="login-input" type="text" ng-model="registerData.lastName" autofocus>
+        </label>
+        <label class="item blush-background item-input" style="padding-right: 5%;">
+          <span class="input-label login-text">Email</span>
+          <input class="login-input" type="text" ng-model="registerData.email" autofocus>
+        </label>
+        <label class="item blush-background item-input" style="padding-right: 5%;">
+          <span class="input-label login-text">Password</span>
+          <input class="login-text login-input" type="password" ng-model="registerData.password">
+        </label>
+
+        <br>
+        <br>
+        <br>
+        <label class="item blush-background">
+          <p style="font-size: 0.7em; color: rgba(68, 68, 68, 0.74); text-align: center; white-space: normal;">By creating an account, I agree to Blush's <b>Terms of Service</b> and <b>Privacy Policy</b></p>
+          <br>
+          <button class="button button-block button-light blush-button-teal button-outline" type="submit">Register Now!</button>
+        </label>
+    </div>
+  </form>
+  </ion-content>
+</ion-modal-view>

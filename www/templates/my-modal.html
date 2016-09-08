@@ -1,0 +1,24 @@
+<ion-modal-view>
+	<ion-header-bar>
+		<h1 class="title">Continue to Booking</h1>
+	</ion-header-bar>
+	<ion-content>
+		<div class="list">
+			<label class="item">
+				<p>Hi, You are currently not logged in.</p>
+			</label>
+			<label class="item">
+				<button class="button button-block button-positive blush-button-teal" ng-click="login()">Log in</button>
+			</label>
+			<label class="item">
+				<p style="white-space: normal;">You can make transactions and booking process even faster by registering an account!</p>
+			</label>
+			<label class="item" style="padding-bottom:0px;">
+				<button class="button button-block button-assertive" ng-click="showRegisterForm()">Register Now!</button>
+			</label>
+			<label class="item" style="padding-top:0px;">
+				<button class="button button-block button-assertive button-outline" ng-click="registerLater()">Continue, Register Later</button>
+			</label>
+		</div>
+	</ion-content>
+</ion-modal-view>

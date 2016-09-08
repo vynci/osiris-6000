@@ -1,0 +1,49 @@
+<ion-view view-title="Artists Near You">
+  <ion-content overflow-scroll="true">
+    <div style="padding-left: 3%; padding-right: 3%;">
+      <ion-google-place placeholder=" Search: Find artists by entering location..." ng-model="position.search" current-location="false"/>
+    </div>
+
+    <div class="row">
+      <div class="col">
+        <button class="button button-block button-positive button-small" ng-click="showFilters()">Show Filters</button>
+      </div>
+      <div class="col">
+        <button class="button button-block button-positive button-small" ng-disabled="isListEmpty" ng-click="changeToMapView()">View in Map</button>
+      </div>
+    </div>
+
+    <div>
+      <div ng-repeat="artist in fromCloudActiveArtists | filter: filterArtist | orderBy: filter.sort">
+        <a class="item item-thumbnail-left" ng-href="#/app/artist/{{artist.id}}">
+          <img ng-src="{{artist.attributes.avatar || spiral}}" class="blush-avatar">
+          <h2>{{artist.attributes.firstName}} {{artist.attributes.lastName}}</h2>
+          <p>{{artist.attributes.serviceType}}</p>
+          <p>₱{{artist.attributes.priceRange.low}} - ₱{{artist.attributes.priceRange.high}}</p>
+          <p>
+            <i ng-class="artist.attributes.rating >= 1 ? 'ion-android-star' : 'ion-ios-star-outline'" class="energized"></i>
+            <i ng-class="artist.attributes.rating >= 2 ? 'ion-android-star' : 'ion-ios-star-outline'" class="energized"></i>
+            <i ng-class="artist.attributes.rating >= 3 ? 'ion-android-star' : 'ion-ios-star-outline'" class="energized"></i>
+            <i ng-class="artist.attributes.rating >= 4 ? 'ion-android-star' : 'ion-ios-star-outline'" class="energized"></i>
+            <i ng-class="artist.attributes.rating == 5 ? 'ion-android-star' : 'ion-ios-star-outline'" class="energized"></i>
+          </p>
+        </a>
+      </div>
+      <div class="row" ng-if="!filter.hair && !filter.makeup">
+        <div class="col" style="text-align: center;">
+          <h6>You filtered out both Hair Stylists and Makeup Artists. This will display an empty list.</h6>
+        </div>
+      </div>
+      <div class="row" ng-if="isListEmpty">
+        <div class="col" style="text-align: center;">
+          <h6>Empty Artist List.</h6>
+          <h6>To Find Artists, input your location in the search box.</h6>
+        </div>
+      </div>
+      <div class="row" ng-hide="!fromCloudActiveArtists.length || (!filter.hair && !filter.makeup)">
+        <div class="col" style="text-align: center;">
+          <button class="button button-positive button-outline" ng-click="loadMoreArtists()">Load More Artists...</button>
+        </div>
+      </div>
+  </ion-content>
+</ion-view>

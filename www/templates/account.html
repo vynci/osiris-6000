@@ -1,0 +1,69 @@
+<ion-view view-title="Account">
+  <ion-content>
+    <div class="list">
+      <div class="item item-divider">
+        My Profile
+      </div>
+      <label class="item item-input item-floating-label">
+        <span class="input-label">First Name</span>
+        <input type="text" placeholder="First Name" ng-model="customerProfile.firstName">
+      </label>
+      <label class="item item-input item-floating-label">
+        <span class="input-label">Last Name</span>
+        <input type="text" placeholder="Last Name" ng-model="customerProfile.lastName">
+      </label>
+
+      <label class="item item-input item-select">
+        <span class="input-label">Gender</span>
+        <select ng-model="customerProfile.gender">
+          <option value="female">Female</option>
+          <option value="male">Male</option>
+        </select>
+      </label>
+
+
+
+      <div class="item" ion-datetime-picker date ng-model="customerProfile.birthDate">
+        <span class="input-label">Birthdate</span>
+        <strong>{{customerProfile.birthDate.toString() | limitTo:16}}</strong>
+      </div>
+
+
+      <div class="item item-divider">
+        Contact Information
+      </div>
+
+      <label class="item item-input item-floating-label">
+        <span class="input-label">Email</span>
+        <input type="text" placeholder="Email" ng-model="customerProfile.email">
+      </label>
+      <label class="item item-input item-floating-label">
+        <span class="input-label">Contact Number</span>
+        <input type="text" placeholder="Contact Number" ng-model="customerProfile.contactNumber">
+      </label>
+      <label class="item item-input item-floating-label">
+        <span class="input-label">Address</span>
+        <input type="text" placeholder="Address" ng-model="customerProfile.address">
+      </label>
+
+      <div class="item item-divider">
+        Account Credentials
+      </div>
+
+      <label class="item item-input item-floating-label">
+        <span class="input-label">Old Password</span>
+        <input type="password" placeholder="First Name" ng-model="customerProfile.oldPassword">
+      </label>
+      <label class="item item-input item-floating-label">
+        <span class="input-label">New Password</span>
+        <input type="password" placeholder="Last Name" ng-model="customerProfile.newPassword">
+      </label>
+
+
+
+      <label class="item" style="padding-bottom: 0px;">
+        <button class="button button-block button-light blush-button-teal button-outline" ng-click="updateProfile()">Update Account</button>
+      </label>
+    </div>
+  </ion-content>
+</ion-view>

@@ -1,0 +1,29 @@
+<ion-modal-view>
+	<ion-header-bar>
+		<button class="button button-small button-energized" style="margin-top: 0px;
+		margin-bottom: 0px;" ng-click="hideComments()"><b><i class="icon ion-chevron-left"></i></b></button>
+		<h1 class="title">Comments</h1>
+	</ion-header-bar>
+	<ion-content>
+
+		<div class="list">
+
+			<a class="item item-avatar" ng-repeat="comment in comments">
+				<img ng-src="{{comment.attributes.commenterInfo.avatar || spiral}}">
+				<h2>{{comment.attributes.commenterInfo.firstName}} {{comment.attributes.commenterInfo.lastName}}</h2>
+				<p style="white-space: normal;">{{comment.attributes.comment}}</p>
+				<h5 style="white-space: normal;">{{comment.attributes.updatedAt | date: "MMMM dd yyyy h:mm a"}}</h5>
+			</a>
+
+			<div class="item item-input-inset">
+				<label class="item-input-wrapper">
+					<input type="text" placeholder="Write a Comment..." ng-model="cardInfo.comment">
+				</label>
+				<button class="button button-small" ng-click="postComment(cardInfo.portfolioId)">
+					Submit
+				</button>
+			</div>
+
+		</div>
+	</ion-content>
+</ion-modal-view>

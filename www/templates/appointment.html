@@ -1,0 +1,38 @@
+<ion-view view-title="Appointments">
+  <ion-content>
+
+    <ion-refresher pulling-text="Pull to refresh..." on-refresh="refresh()"></ion-refresher>
+
+    <div class="item item-divider blush-background-pink">
+      Pending
+    </div>
+
+    <div class="list">
+
+      <a class="item item-thumbnail-left" ng-repeat="appointment in appointments" ng-if="!appointment.attributes.isCompleted">
+        <img ng-src="{{appointment.attributes.artistInfo.avatar}}" class="blush-avatar">
+        <h2>{{appointment.attributes.artistInfo.firstName}} {{appointment.attributes.artistInfo.lastName}}</h2>
+        <p><b>When: </b>{{appointment.attributes.schedule.toString() | limitTo:21}}</p>
+        <p><b>Duration: </b>{{appointment.attributes.totalDuration}} mins</p>
+        <p><b>Total: </b>₱{{appointment.attributes.totalBill}}</p>
+      </a>
+
+    </div>
+
+    <div class="item item-divider blush-background-alt">
+      Completed
+    </div>
+
+    <div class="list">
+
+      <a class="item item-thumbnail-left" ng-repeat="appointment in appointments" ng-if="appointment.attributes.isCompleted">
+        <img ng-src="{{appointment.attributes.artistInfo.avatar}}" class="blush-avatar">
+        <h2>{{appointment.attributes.artistInfo.firstName}} {{appointment.attributes.artistInfo.lastName}}</h2>
+        <p ng-show="appointment.attributes.isReviewed">You alread did a review on this artist.</p>
+        <button ng-hide="appointment.attributes.isReviewed" class="button button-energized" ng-click="openReviewModal(appointment)">Add Review</button>
+      </a>
+
+    </div>
+
+  </ion-content>
+</ion-view>

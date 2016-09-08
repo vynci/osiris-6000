@@ -1,0 +1,68 @@
+<ion-view view-title="Book">
+  <ion-content>
+    <div class="list">
+      <div class="item item-divider blush-background-pink">
+        Your Profile
+      </div>
+
+      <label class="item item-input item-stacked-label">
+        <span class="input-label">First Name</span>
+        <input type="text" ng-model="customerProfile.firstName" placeholder="ex: Daenerys">
+      </label>
+      <label class="item item-input item-stacked-label">
+        <span class="input-label">Last Name</span>
+        <input type="text" ng-model="customerProfile.lastName" placeholder="ex: Targaryen">
+      </label>
+      <label class="item item-input item-stacked-label">
+        <span class="input-label">Contact</span>
+        <input type="text" ng-model="customerProfile.contactNumber" placeholder="+63 9123456789">
+      </label>
+
+      <div class="item item-divider blush-background-alt">
+        Selected Artist
+      </div>
+
+      <div class="item">
+        <a class="item item-thumbnail-left" href="#/app/artists/1" style="min-height: 100px !important;">
+          <img src="{{artist.avatar}}" style="border-radius: 50%;">
+          <h2>{{artist.firstName}} {{artist.lastName}}</h2>
+          <p>{{artist.serviceType}}</p>
+          <p>
+            <i class="ion-android-star energized"></i>
+            <i class="ion-android-star energized"></i>
+            <i class="ion-android-star energized"></i>
+            <i class="ion-android-star energized"></i>
+            <i class="ion-android-star-half energized"></i>
+          </p>
+        </a>
+        <a class="button button-block" href="#/app/service" style="width: 100%;">Choose other Artists</a>
+      </div>
+
+      <div class="item item-divider">
+        Schedule
+      </div>
+
+      <div class="item item-icon-left" ion-datetime-picker am-pm ng-model="datetimeValue">
+        <i class="icon ion-ios-calendar-outline positive"></i>
+        <strong>{{datetimeValue| date: "MMMM dd yyyy h:mm a"}}</strong>
+      </div>
+
+      <div class="item item-divider blush-background-alt">
+        Mode of Payment
+      </div>
+
+      <div class="item">
+        <ion-list>
+          <div class="row">
+            <div class="col">Total Bill:</div>
+            <div class="col text-right"><b>₱{{totalBill}}</b></div>
+          </div>
+          <ion-radio ng-model="choice.name" value="cash">Cash On Delivery</ion-radio>
+          <ion-radio ng-model="choice.name" value="creditCard">Credit Card</ion-radio>
+        </ion-list>
+        <button class="button button-block button-energized" ng-click="book()">Book Now</button>
+      </div>
+
+    </div>
+  </ion-content>
+</ion-view>

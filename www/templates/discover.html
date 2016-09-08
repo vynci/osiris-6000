@@ -1,0 +1,30 @@
+<ion-view view-title="Discover">
+  <ion-content overflow-scroll="true">
+    <ion-refresher pulling-text="Pull to refresh..." on-refresh="refresh()"></ion-refresher>
+    <div class="list card" ng-repeat="card in cards">
+
+      <div class="item item-avatar">
+        <img ng-src="{{card.attributes.artistInfo.avatar || spiral}}">
+        <h2><a ng-href="#/app/artist/{{card.attributes.artistInfo.id}}">{{card.attributes.artistInfo.name}}</a></h2>
+      </div>
+
+      <div class="item item-body">
+        <img class="full-image" ng-src="{{card.attributes.imagePath}}" spinkit-image-preloader='chasing-dots-spinner'>
+        <p>
+          {{card.attributes.description}}
+        </p>
+        <p>
+          <a class="subdued" ng-click="addLike(card)"><i style="color:#ff6c8f;" class="ion-ios-heart"></i> {{card.attributes.likes.length || 0}} Likes</a>
+          <a class="subdued" ng-click="getComments(card)"><i style="color:#6cd9ff;" class="ion-ios-chatbubble"></i> {{card.attributes.comments.length || 0}} Comments</a>
+        </p>
+      </div>
+
+    </div>
+    <div class="row">
+      <div class="col" style="text-align: center;">
+        <button class="button button-positive button-outline" ng-click="loadMorePosts()">Load More Posts...</button>
+      </div>
+    </div>
+
+  </ion-content>
+</ion-view>

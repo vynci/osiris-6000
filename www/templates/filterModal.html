@@ -1,0 +1,32 @@
+<ion-modal-view>
+	<ion-header-bar>
+		<h1 class="title">Filters</h1>
+		<button class="button button-small button-dark" style="margin-top: 0px;
+		margin-bottom: 0px;" ng-click="hideFilters()"><b><i class="ion-android-close"></i></b></button>
+	</ion-header-bar>
+	<ion-content>
+		<ion-list>
+			<ion-checkbox ng-model="filter.hair">Hair Stylist</ion-checkbox>
+			<ion-checkbox ng-model="filter.makeup">Makeup Artist</ion-checkbox>
+		</ion-list>
+
+		<label class="item item-input item-select">
+			<div class="input-label">
+				Order By:
+			</div>
+			<select ng-model="filter.sort">
+				<option value="" selected>Distance</option>
+				<option value="-attributes.priceRange.high">Price: High to Low</option>
+				<option value="+attributes.priceRange.high">Price: Low to High</option>
+				<option value="-attributes.rating">Rating</option>
+			</select>
+		</label>
+
+		<div class="item">
+			<button class="button button-block button-balanced" ng-click="hideFilters()">Apply</button>
+		</div>
+		<div class="item">
+
+		</div>
+	</ion-content>
+</ion-modal-view>

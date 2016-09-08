@@ -1,0 +1,96 @@
+<ion-view view-title="">
+  <ion-content>
+    <div>
+      <div class="item" style="text-align: center; background: white; padding-top: 2px;">
+        <img ng-src="{{profile.avatar || spiral}}" class="blush-avatar" style="width: 100px; max-width: 100px; max-height: 100px; border-width: 3px; border-style: solid; border-color: goldenrod;">
+        <h2 style="color:black;">{{profile.firstName}} {{profile.lastName}}</h2>
+        <p style="color:#444;">{{profile.serviceType}}</p>
+        <!-- <p>
+          <i class="ion-android-star energized"></i>
+          <i class="ion-android-star energized"></i>
+          <i class="ion-android-star energized"></i>
+          <i class="ion-android-star energized"></i>
+          <i class="ion-android-star-half energized"></i>
+        </p> -->
+        <button class="button button-positive button-small" ng-click="followArtist()"><i class="ion-person-add"> Follow</i></button>
+        <a class="button button-positive button-small" ng-href="#/app/chat-view/{{artistId}}"><i class="ion-ios-chatboxes"> Message</i></a>
+      </div>
+    </div>
+
+    <ion-tabs class="tabs-assertive tabs-color-light tabs-icon-top">
+
+      <ion-tab on-select="changeTab('services')" title="Services" icon-on="ion-ios-rose" icon-off="ion-ios-rose-outline">
+        <!-- Tab 1 content -->
+      </ion-tab>
+
+      <ion-tab on-select="changeTab('portfolio')" title="Portfolio" icon-on="ion-ios-person" icon-off="ion-ios-person-outline">
+        <!-- Tab 2 content -->
+      </ion-tab>
+
+      <ion-tab on-select="changeTab('reviews')" title="Reviews" icon-on="ion-ios-compose" icon-off="ion-ios-compose-outline">
+        <!-- Tab 3 content -->
+      </ion-tab>
+
+    </ion-tabs>
+
+    <div ng-if="selectedTab === 'services'" style="padding-bottom: 20%;">
+      <ion-list>
+
+        <ion-checkbox ng-click="toggleSelection(service)" ng-checked="service.checked" ng-repeat="service in artistServices">
+          <b>{{service.attributes.name}}</b>
+          <p>{{service.attributes.duration}} mins</p>
+          <p style="white-space: normal;">{{service.attributes.description}}
+          </p>
+          <br>
+          <span class="item-note">
+            ₱{{service.attributes.price}}
+          </span>
+        </ion-checkbox>
+
+
+      </ion-list>
+    </div>
+
+    <div ng-if="selectedTab === 'portfolio'">
+      <div class="row" ng-repeat="image in artistPortfolio" ng-if="$index % 3 === 0">
+        <div class="col col-33" ng-if="$index < artistPortfolio.length">
+          <img ng-src="{{artistPortfolio[$index].attributes.imagePath}}" spinkit-image-preloader='chasing-dots-spinner' width="100%" />
+        </div>
+        <div class="col col-33" ng-if="$index + 1 < artistPortfolio.length">
+          <img ng-src="{{artistPortfolio[$index + 1].attributes.imagePath}}" spinkit-image-preloader='chasing-dots-spinner' width="100%" />
+        </div>
+        <div class="col col-33" ng-if="$index + 2 < artistPortfolio.length">
+          <img ng-src="{{artistPortfolio[$index + 2].attributes.imagePath}}" spinkit-image-preloader='chasing-dots-spinner' width="100%" />
+        </div>
+      </div>
+    </div>
+
+    <div ng-if="selectedTab === 'reviews'">
+      <br>
+      <div class="list">
+
+        <div class="item item-thumbnail-left" ng-repeat="review in artistReviews">
+          <img ng-src="{{review.attributes.customerInfo.avatar || spiral}}">
+          <h2>{{review.attributes.title}}</h2>
+          <p>
+            <rating ng-model="review.attributes.ratings" max="5"></rating>
+          </p>
+          <p style="white-space: normal;">{{review.attributes.description}}</p>
+          <p>by <em>{{review.attributes.customerInfo.firstName}} {{review.attributes.customerInfo.lastName}}</em></p>
+          <br>
+        </div>
+
+      </div>
+    </div>
+
+  </ion-content>
+  <div ng-style="{opacity : ((totalBill > 0) && '1') || '0.8'}" ng-if="selectedTab === 'services'" class="item item-divider blush-background-alt" style="position: fixed; bottom: 0; width: 100%; padding-top: 1px;
+  padding-bottom: 1px; padding-right: 5px;">
+    <div class="row">
+      <div class="col">Total Bill:</div>
+      <div class="col text-left"><b>₱{{totalBill}}</b></div>
+      <div class="col col-50"><button class="button button-block button-small button-energized" style="margin-top: 0px;
+        margin-bottom: 0px;" ng-click="book()" ng-disabled="!totalBill"><b>Book Now! <i class="icon ion-chevron-right"></i></b></button></div>
+    </div>
+  </div>
+</ion-view>

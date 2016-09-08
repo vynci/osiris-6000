@@ -1,0 +1,8 @@
+@font-face {
+	font-family: 'SouthernAire';
+	src: url('SouthernAire_Personal_Use_Only.eot');
+	src: url('SouthernAire_Personal_Use_Only.eot') format('embedded-opentype'),
+	url('SouthernAire_Personal_Use_Only.woff') format('woff'),
+	url('SouthernAire_Personal_Use_Only.ttf') format('truetype'),
+	url('SouthernAire_Personal_Use_Only.svg#SouthernAireRegular') format('svg');
+}
