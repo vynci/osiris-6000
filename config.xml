@@ -8,6 +8,7 @@
       Your Name Here
     </author>
     <content src="index.html" />
+    <plugin name="com.ionic.keyboard" spec="1.0.3" source="pgb" />
     <gap:plugin name="org.apache.cordova.console" />
     <gap:plugin name="org.apache.cordova.device" />
     <plugin name="cordova-plugin-whitelist" spec="1" />
@@ -86,4 +87,8 @@
         <splash height="1280" src="resources/wp8/splash/SplashScreenImage.png" width="768" />
     </platform>
     <icon src="resources/android/icon/drawable-xhdpi-icon.png" />
+    <plugin name="plugin.google.maps" spec="~1.3.9">
+        <variable name="API_KEY_FOR_ANDROID" value="AIzaSyCd92YvCeP1tzD2R5U-MGymGk0Pejnbsdo" />
+        <variable name="API_KEY_FOR_IOS" value="AIzaSyAmrM8n0B8r67-DWJyjtCW6LcfaXOVP1ko" />
+    </plugin>
 </widget>
