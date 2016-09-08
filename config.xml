@@ -11,8 +11,6 @@
 
     <plugin name="cordova-plugin-geolocation" spec="2.2.0" />
     <plugin name="cordova-plugin-whitelist" spec="1.2.2" />
-    <plugin name="org.apache.cordova.console" source="pgb" spec="0.2.13" />
-    <plugin name="org.apache.cordova.device" source="pgb" spec="0.3.0" />
 
     <access origin="*" />
     <allow-intent href="http://*/*" />

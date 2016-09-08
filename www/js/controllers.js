@@ -13,7 +13,7 @@ app.controller('AppCtrl', function($scope, $ionicModal, $timeout, $state, $rootS
 
   $rootScope.side_menu = document.getElementsByTagName("ion-side-menu")[0];
 
-  $rootScope.$on('$stateChangeSuccess', function (event, toState, toParams, fromParams, toParams) {
+  $rootScope.$on('$stateChangeSuccess', function (event, toState, toParams, fromParams) {
     if (toState.name != 'app.service') {
       $rootScope.side_menu.style.visibility = "visible";
     }
