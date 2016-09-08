@@ -9,7 +9,7 @@
     </author>
     <content src="index.html" />
     <plugin name="cordova-plugin-whitelist" spec="1" />
-    <gap:plugin name="cordova-plugin-geolocation" source="plugins.cordova.io" spec="~2.2.0" />
+    <gap:plugin name="cordova-plugin-geolocation" source="npm" spec="~2.2.0" />
     <access origin="*" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
