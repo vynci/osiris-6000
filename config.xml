@@ -8,7 +8,7 @@
       Your Name Here
     </author>
     <content src="index.html" />
-    <gap:plugin name="cordova-plugin-whitelist" source="plugins.cordova.io" spec="1" />
+    <plugin name="cordova-plugin-whitelist" spec="1" />
     <gap:plugin name="cordova-plugin-geolocation" source="plugins.cordova.io" spec="~2.2.0" />
     <access origin="*" />
     <allow-intent href="http://*/*" />
