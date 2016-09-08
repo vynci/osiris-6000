@@ -8,10 +8,12 @@
       Your Name Here
     </author>
     <content src="index.html" />
-    <gap:plugin name="org.apache.cordova.console" />
-    <gap:plugin name="org.apache.cordova.device" />
-    <plugin name="cordova-plugin-whitelist" spec="1" />
-    <gap:plugin name="cordova-plugin-geolocation" source="npm" spec="~2.2.0" />
+
+    <plugin name="cordova-plugin-geolocation" spec="2.2.0" />
+    <plugin name="cordova-plugin-whitelist" spec="1.2.2" />
+    <plugin name="org.apache.cordova.console" source="pgb" spec="0.2.13" />
+    <plugin name="org.apache.cordova.device" source="pgb" spec="0.3.0" />
+
     <access origin="*" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
@@ -86,8 +88,8 @@
         <splash height="1280" src="resources/wp8/splash/SplashScreenImage.png" width="768" />
     </platform>
     <icon src="resources/android/icon/drawable-xhdpi-icon.png" />
-    <gap:plugin name="plugin.google.maps" source="npm" spec="~1.3.9">
+    <plugin name="cordova-plugin-googlemaps" source="npm" spec="1.4.0">
         <param name="API_KEY_FOR_ANDROID" value="AIzaSyCd92YvCeP1tzD2R5U-MGymGk0Pejnbsdo" />
         <param name="API_KEY_FOR_IOS" value="AIzaSyAmrM8n0B8r67-DWJyjtCW6LcfaXOVP1ko" />
-    </gap:plugin>
+    </plugin>
 </widget>
