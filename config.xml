@@ -8,7 +8,6 @@
       Your Name Here
     </author>
     <content src="index.html" />
-    <plugin name="com.ionic.keyboard" spec="1.0.3" source="pgb" />
     <gap:plugin name="org.apache.cordova.console" />
     <gap:plugin name="org.apache.cordova.device" />
     <plugin name="cordova-plugin-whitelist" spec="1" />
